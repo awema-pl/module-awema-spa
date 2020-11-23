@@ -1,0 +1,8 @@
+nav.frame__aside-nav
+    .frame__aside-nav-wrap
+        ul.frame__aside-links
+            each link in nav
+                li.frame__aside-li
+                    a.frame__aside-link(href=link.href) #{link.name}
+            li.frame__aside-li
+                    a.frame__aside-link(href='/error') Error link

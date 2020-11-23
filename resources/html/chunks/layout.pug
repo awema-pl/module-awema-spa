@@ -1,0 +1,30 @@
+block layoutVariables
+    - var title = 'Document'
+    - var description = ''
+
+doctype html
+html
+    head(lang="en")
+        meta(name="charset" content="utf-8")
+        title #{title}
+        if (description)
+            meta(name="description" content=description)
+        include head
+    body(data-awema-spa-layout="main")
+        .frame.mainwrapper
+
+            //- aside
+            .frame__aside
+                .frame__aside-line
+                    h2.frame__aside-title Your logo
+                include nav
+
+            //- right
+            .frame__right(data-awema-spa-container)
+                .frame__header
+                    .frame__header-top
+                    .frame__header-line
+                        h1.frame__header-title #{title}
+                //- content
+                .frame__content
+                    block content

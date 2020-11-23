@@ -1,0 +1,1 @@
+.awema-spa-progress{position:fixed;z-index:120;top:0;width:100%;height:5px;height:var(--spa_progress_height,5px);transform-origin:left center;background:#7fc876;background:var(--spa_progress_bg,#7fc876)}

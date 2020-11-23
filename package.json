@@ -1,0 +1,65 @@
+{
+    "private": true,
+    "name": "awema-spa",
+    "version": "1.0.3",
+    "description": "A plugin for SPA-like page navigation",
+    "author": "AwemaCode (https://www.awema.de/)",
+    "main": "dist/js/main.js",
+    "module": "resources/js/main.js",
+    "files": [
+        "dist/js/main.js",
+        "dist/js/main.legacy.js",
+        "dist/css/main.css"
+    ],
+    "awema-files": [
+        "/js/main.js",
+        "/js/main.legacy.js"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.awema.pl:awema-pl/awema-spa.git"
+    },
+    "scripts": {
+        "start": "npm run watch",
+        "watch": "cross-env NODE_ENV=development BROWSERSLIST_ENV=modern gulp",
+        "watch:legacy": "cross-env NODE_ENV=development BROWSERSLIST_ENV=legacy gulp",
+        "build": "npm run build:modern && npm run build:legacy",
+        "build:modern": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=modern gulp",
+        "build:legacy": "cross-env NODE_ENV=production cross-env BROWSERSLIST_ENV=legacy rollup -c"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "autoprefixer": "^9.4.5",
+        "browser-sync": "^2.26.3",
+        "core-js": "^2.6.2",
+        "cross-env": "^5.2.0",
+        "cssnano": "^4.1.8",
+        "gulp": "^4.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-data": "^1.3.1",
+        "gulp-noop": "^1.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-pretty-html": "^2.0.10",
+        "gulp-pug": "^4.0.1",
+        "gulp-rollup": "^2.16.2",
+        "gulp-sourcemaps": "^2.6.4",
+        "gulp-stylus": "^2.7.0",
+        "merge-stream": "^1.0.1",
+        "nib": "^1.1.2",
+        "postcss-custom-properties": "^8.0.10",
+        "postcss-import": "^12.0.1",
+        "rollup": "^0.68.2",
+        "rollup-plugin-babel": "^4.1.0",
+        "rollup-plugin-commonjs": "^9.2.0",
+        "rollup-plugin-json": "^3.1.0",
+        "rollup-plugin-license": "^0.8.1",
+        "rollup-plugin-node-resolve": "^4.0.0",
+        "rollup-plugin-postcss": "^2.0.3",
+        "rollup-plugin-terser": "^4.0.2"
+    },
+    "dependencies": {
+        "axios": "^0.21.0"
+    }
+}
