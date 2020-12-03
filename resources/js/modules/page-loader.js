@@ -38,6 +38,7 @@ export class PageLoader {
                 this._deleteProgressBar()
                 delete this._html
                 delete this._doc
+                AWEMA.emit('spa::page_loaded')
             })
             .catch( err => {
                 this._deleteProgressBar()
