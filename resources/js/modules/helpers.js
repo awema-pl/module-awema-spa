@@ -56,3 +56,18 @@ export function isKeyPressed(event) {
         event.shiftKey ||
         event.altKey;
 }
+
+/**
+ * String query to array
+ *
+ * @param  {String}  url
+ * @return {Array}    true if any key was pressed
+ */
+export function queryToArray(query) {
+
+   let array = {};
+    (new URLSearchParams(query)).forEach((value, key) => {
+        array[key] = value
+    });
+   return array;
+}

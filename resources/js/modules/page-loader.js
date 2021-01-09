@@ -140,9 +140,11 @@ export class PageLoader {
             if ( container && nextContainer) {
                 // replace only container
                 container.innerHTML = nextContainer.innerHTML
+                container.className = nextContainer.className
             } else {
                 // replace whole body
                 document.body.innerHTML = this._doc.body.innerHTML
+                document.body.className = this._doc.body.className
             }
 
             container = null

@@ -1,4 +1,4 @@
-import { isSpaTarget, isKeyPressed } from './helpers'
+import { isSpaTarget, isKeyPressed, queryToArray } from './helpers'
 import { PageLoader } from './page-loader'
 
 
@@ -43,7 +43,7 @@ export class Spa {
         }
         
         window.history.pushState(null, document.title, link.href)
-        AWEMA._vueRouter && AWEMA._vueRouter.replace({path: link.pathname})
+        AWEMA._vueRouter && AWEMA._vueRouter.replace({path: link.pathname, query: queryToArray(link.search)})
 
         this.pageLoader.load(link.href)
             .then( () => {
